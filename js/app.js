@@ -33,12 +33,26 @@ function leerDatos(curso) {
 function carritoHTML() {
   deleteHTML();
   articulos.forEach((e) => {
+    const { imagen, nombre, precio, cantidad, id } = e;
     const row = document.createElement("tr");
     row.innerHTML = `
     <td>
-    ${e.nombre}
-   
     
+    <th>
+    <img src="${imagen}" width="100">
+    </th>
+    <th>
+    ${nombre}
+    </th>
+    <th>
+    ${precio}
+    </th>
+    <th>
+    ${cantidad}
+    </th>
+    <th>
+    <a href="#" class="borrar-curso" data-id="${id}">X</a>
+    </th>
     `;
     contenedorCarrito.appendChild(row);
   });
